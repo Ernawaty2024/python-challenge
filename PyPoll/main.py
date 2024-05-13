@@ -61,3 +61,4 @@ print("-"*40)
 #Find the candidate with the highest number of votes
 winner = max(candidate_votes, key=candidate_votes.get)
 print(f"Winner: {winner} ")
+print("-"*40)
