@@ -1,4 +1,3 @@
-IPdb [5]: runfile('C:/Users/Ernie/Documents/GitHub/python-challenge/PyBank/main.py', wdir='C:/Users/Ernie/Documents/GitHub/python-challenge/PyBank')
 
 Financial Analysis
 
