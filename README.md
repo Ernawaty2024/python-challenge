@@ -32,7 +32,7 @@ This Python script aids in modernizing the vote-counting process for a small, ru
 5. Additionally, it will export the results to a text file named **'results.txt'**.
 
 #### PyPoll
-1. Ensure you have the <code style="color:blue">[election_data.csv](C:\Users\Ernie\Documents\GitHub\python-challenge\PyPoll\Resources)</code> file containing your voting data.
+1. Ensure you have the <code style="color:blue">[election_data.csv](PyPoll/Resources/election_data.csv)</code> file containing your voting data.
 2. pen a terminal or command prompt.
 3. Navigate to the directory containing the **main.py** script and the **'election_data.csv'** file.
 4. The script will read the voting data, analyze it, and print the results to the terminal.
