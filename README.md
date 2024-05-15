@@ -25,7 +25,7 @@ This Python script aids in modernizing the vote-counting process for a small, ru
 
 ## Usage
 #### PyBank
-1. Ensure you have the <code style ="color:blue">[budget_data.csv]([C:\Users\Ernie\Documents\GitHub\python-challenge\PyBank\Resources](https://github.com/Ernawaty2024/python-challenge/tree/main/PyBank/Resources))</code> file containing your financial data.
+1. Ensure you have the <code style ="color:blue">[budget_data.csv](PyBank/Resources/budget_data.csv)</code> file containing your financial data.
 2. Open a terminal or command prompt.
 3. Navigate to the directory containing the **main.py** script and the **"budget_data.csv'** file.
 4. The script will read the financial data, analyze it, and print the results to the terminal.
