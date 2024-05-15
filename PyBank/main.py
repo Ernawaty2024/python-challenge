@@ -12,15 +12,15 @@ import csv
 pwf = os.path.abspath(__file__)
 pwd = os.path.dirname(pwf)
 csvpath = os.path.join(pwd,"Resources","budget_data.csv")
-
+export_path = os.path.join(pwd, "analysis", "results.txt")
 
 # Define the function and have it accept the 'budget_data' as its sole parameter
 def analysis(csvpath):
     with open(csvpath,'r') as file:
         csv_reader = csv.reader(file)
         
-        #Skip the header row
-        next(csv_reader)
+        #Store the header row
+        header = next(csv_reader)
         
         #Initialize variables
         row_count = 0
@@ -63,10 +63,10 @@ def analysis(csvpath):
         average_change = total_change / (row_count - 1) #Substract 1 to exclude first row
             
             
-    return row_count, second_column_sum, average_change, max_increase, max_increase_date, max_decrease, max_decrease_date
+    return header, row_count, second_column_sum, average_change, max_increase, max_increase_date, max_decrease, max_decrease_date
 
 #Unpack the return values of 'analysis'
-Total_months, Total_profit, Average_change, Max_increase, Max_increase_date, Max_decrease, Max_decrease_date = analysis(csvpath)
+header, Total_months, Total_profit, Average_change, Max_increase, Max_increase_date, Max_decrease, Max_decrease_date = analysis(csvpath)
 
 #Print analysis to terminal
 print("Financial Analysis")
@@ -78,7 +78,7 @@ print(f"Greatest Increase In Profits: {Max_increase_date} (${Max_increase})")
 print(f"Greatest Decrease In Profits: {Max_decrease_date} (${Max_decrease})")
 
 # Export analysis to text file
-with open("PyBank/analysis/results.txt","w")as txt_file:
+with open(export_path,"w")as txt_file:
     txt_file.write("Financial Analysis\n")
     txt_file.write("-" * 40 + "\n")
     txt_file.write(f"Total months : {Total_months}\n")
