@@ -68,7 +68,7 @@ def analysis(csvpath):
 #Unpack the return values of 'analysis'
 Total_months, Total_profit, Average_change, Max_increase, Max_increase_date, Max_decrease, Max_decrease_date = analysis(csvpath)
 
-
+#Print analysis to terminal
 print("Financial Analysis")
 print("-" *40) #Create a line of dashes
 print(f"Total months : {Total_months}")
@@ -76,3 +76,13 @@ print(f"Total : ${Total_profit}")
 print(f"Average Change : ${Average_change:.2f}")
 print(f"Greatest Increase In Profits: {Max_increase_date} (${Max_increase})")
 print(f"Greatest Decrease In Profits: {Max_decrease_date} (${Max_decrease})")
+
+# Export analysis to text file
+with open("PyBank/analysis/results.txt","w")as txt_file:
+    txt_file.write("Financial Analysis\n")
+    txt_file.write("-" * 40 + "\n")
+    txt_file.write(f"Total months : {Total_months}\n")
+    txt_file.write(f"Total : ${Total_profit}\n")
+    txt_file.write(f"Average Change : ${Average_change:.2f}\n")
+    txt_file.write(f"Greatest Increase In Profits: {Max_increase_date} (${Max_increase})\n")
+    txt_file.write(f"Greatest Decrease In Profits: {Max_decrease_date} (${Max_decrease})\n")
