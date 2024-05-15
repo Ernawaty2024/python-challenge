@@ -9,18 +9,18 @@ import os
 import csv
 
 # Set up relative Paths
-cwd = os.path.abspath(__file__)
-dir_name=os.path.dirname(cwd)
-election_data_csv=os.path.join(dir_name,'Resources','election_data.csv')
-outputpath=os.path.join(dir_name,'analysis','analysis_output.txt')
+pwf = os.path.abspath(__file__)
+pwd = os.path.dirname(pwf)
+csvpath = os.path.join(pwd,"Resources","election_data.csv")
+export_path = os.path.join(pwd, "analysis", "results.txt")
 
 #Define the function and accept the 'election_data.csv'as its sole parameter
-def analysis(election_data_csv):
-    with open (election_data_csv, 'r') as file:
+def analysis(csvpath):
+    with open (csvpath, 'r') as file:
         csv_reader = csv.reader(file)
         
-        #Skip the header row
-        next(csv_reader)
+        #Store the header row
+        header = next(csv_reader)
         
         #Initialize variables
         total_votes = 0
@@ -44,9 +44,10 @@ def analysis(election_data_csv):
     return total_votes, candidate_votes, candidate_percentages
 
 #Unpack the return values of 'analysis'
+Total_votes, candidate_votes, candidate_percentage = analysis(csvpath)
 
-Total_votes, candidate_votes, candidate_percentage = analysis(election_data_csv)
 
+#Print analysis to terminal
 print(f"Election Results")
 print("-"*40)
 print(f"Total Votes: {Total_votes}")
@@ -62,3 +63,16 @@ print("-"*40)
 winner = max(candidate_votes, key=candidate_votes.get)
 print(f"Winner: {winner} ")
 print("-"*40)
+
+# Export analysis to text file
+with open(export_path,"w")as txt_file:
+    txt_file.write(f"Election Results\n")
+    txt_file.write("-"*40+ "\n")
+    txt_file.write(f"Total Votes: {Total_votes}\n")
+    txt_file.write("-"*40+ "\n")
+    for candidate, votes in candidate_votes.items():
+        percentage = candidate_percentage[candidate]
+        txt_file.write(f"{candidate}: {percentage:.3f}% ({votes})\n")
+    txt_file.write("-"*40 + "\n")
+    txt_file.write(f"Winner: {winner}\n")
+    txt_file.write("-"*40+ "\n")

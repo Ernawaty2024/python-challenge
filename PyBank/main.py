@@ -63,10 +63,10 @@ def analysis(csvpath):
         average_change = total_change / (row_count - 1) #Substract 1 to exclude first row
             
             
-    return header, row_count, second_column_sum, average_change, max_increase, max_increase_date, max_decrease, max_decrease_date
+    return row_count, second_column_sum, average_change, max_increase, max_increase_date, max_decrease, max_decrease_date
 
 #Unpack the return values of 'analysis'
-header, Total_months, Total_profit, Average_change, Max_increase, Max_increase_date, Max_decrease, Max_decrease_date = analysis(csvpath)
+Total_months, Total_profit, Average_change, Max_increase, Max_increase_date, Max_decrease, Max_decrease_date = analysis(csvpath)
 
 #Print analysis to terminal
 print("Financial Analysis")
