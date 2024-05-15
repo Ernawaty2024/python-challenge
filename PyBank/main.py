@@ -9,16 +9,14 @@ import csv
 
 
 # Set up relative Paths
-cwd = os.path.abspath(__file__)
-dir_name=os.path.dirname(cwd)
-budget_data_csv=os.path.join(dir_name,'Resources','budget_data.csv')
-outputpath=os.path.join(dir_name,'analysis','analysis_output.txt')
-
+pwf = os.path.abspath(__file__)
+pwd = os.path.dirname(pwf)
+csvpath = os.path.join(pwd,"Resources","budget_data.csv")
 
 
 # Define the function and have it accept the 'budget_data' as its sole parameter
-def analysis(budget_data_csv):
-    with open(budget_data_csv,'r') as file:
+def analysis(csvpath):
+    with open(csvpath,'r') as file:
         csv_reader = csv.reader(file)
         
         #Skip the header row
@@ -68,7 +66,7 @@ def analysis(budget_data_csv):
     return row_count, second_column_sum, average_change, max_increase, max_increase_date, max_decrease, max_decrease_date
 
 #Unpack the return values of 'analysis'
-Total_months, Total_profit, Average_change, Max_increase, Max_increase_date, Max_decrease, Max_decrease_date = analysis(budget_data_csv)
+Total_months, Total_profit, Average_change, Max_increase, Max_increase_date, Max_decrease, Max_decrease_date = analysis(csvpath)
 
 
 print("Financial Analysis")
