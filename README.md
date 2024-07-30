@@ -1,9 +1,9 @@
-# Python-Challenge
+# Financial Analysis of Company Records
 
 ## About the Project
 ### PyBank
 #### Introduction
-This Python script is designed to analyze the financial records of a company. It reads in a dataset named budget_data.csv, which contains two columns: "Date" and "Profit/Losses". The script calculates various financial metrics over the given period.
+This Python script is designed to analyze the financial records of a company. It reads in a dataset named `budget_data.csv`, which contains two columns: "Date" and "Profit/Losses". The script calculates various financial metrics over the given period.
 
 #### Metrics Calculated
 1. **Total Months** : Calculates the total number of months included in the dataset.
@@ -14,7 +14,7 @@ This Python script is designed to analyze the financial records of a company. It
 
 ### PyPoll
 #### Introduction
-This Python script aids in modernizing the vote-counting process for a small, rural town. It analyzes a dataset named election_data.csv, which contains three columns: "Voter ID", "County", and "Candidate". The script calculates various voting metrics.
+This Python script aids in modernizing the vote-counting process for a small, rural town. It analyzes a dataset named  `election_data.csv`, which contains three columns: "Voter ID", "County", and "Candidate". The script calculates various voting metrics.
 
 #### Metrics Calculated
 1. **Total Votes**: Calculates the total number of votes cast.
@@ -36,7 +36,7 @@ This Python script aids in modernizing the vote-counting process for a small, ru
 
 1. Ensure you have the <code style="color:blue">[election_data.csv](PyPoll/Resources/election_data.csv)</code> file containing your voting data.
 2. Open a terminal or command prompt.
-3. Navigate to the directory containing the **main.py** script and the **'election_data.csv'** file.
+3. Navigate to the directory containing the<code style="color:blue">[main.py](https://github.com/Ernawaty2024/python-challenge/blob/main/PyPoll/main.py)</code> script and the **'election_data.csv'** file.
 4. The script will read the voting data, analyze it, and print the results to the terminal.
 5. Additionally, it will export the results to a text file named **'results'**.txt.
 
